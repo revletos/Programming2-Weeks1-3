@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class SquareScript : MonoBehaviour
 {
-    float speed = 0.1f;
+    public float speed = 0.5f;
+    //Speed does not match up again
+
     // Start is called before the first frame update
     void Start()
     {
