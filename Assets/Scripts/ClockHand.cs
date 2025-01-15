@@ -22,7 +22,7 @@ public class ClockHand : MonoBehaviour
         pos.x += speed * Time.deltaTime;
         pos.y += speed* Time.deltaTime;
 
-        Debug.Log(pos.y.ToString());
+        //Debug.Log(pos.y.ToString());
 
         //Vector3 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         //mouse.z = 0;
