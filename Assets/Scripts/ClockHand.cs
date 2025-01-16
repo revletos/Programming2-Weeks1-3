@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class ClockHand : MonoBehaviour
 {
-    public float speed = 100f;
+    [Range(0,1)]
+    public float speed = 0.1f;
 
 
     // Start is called before the first frame update
@@ -18,16 +19,8 @@ public class ClockHand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 pos = transform.position;
-        pos.x += speed * Time.deltaTime;
-        pos.y += speed* Time.deltaTime;
-
-        //Debug.Log(pos.y.ToString());
-
-        //Vector3 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //mouse.z = 0;
-        //Vector2 point = mouse - transform.position;
-
-        //transform.up = point;
+        Vector3 rot = transform.eulerAngles;
+        rot.z -= speed;
+        transform.eulerAngles = rot;
     }
 }
