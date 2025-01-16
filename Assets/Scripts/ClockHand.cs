@@ -6,7 +6,7 @@ using UnityEngine;
 public class ClockHand : MonoBehaviour
 {
     [Range(0,1)]
-    public float speed = 0.1f;
+    public float speed = 0.07f;
 
 
     // Start is called before the first frame update
