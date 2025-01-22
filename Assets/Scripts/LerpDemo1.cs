@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LerpDemo1 : MonoBehaviour
@@ -10,6 +11,7 @@ public class LerpDemo1 : MonoBehaviour
     public Transform middle1;
     public Transform end1;
     public float timer;
+    public float order;
 
     public AnimationCurve curve1;
     // Start is called before the first frame update
@@ -27,13 +29,37 @@ public class LerpDemo1 : MonoBehaviour
         //Alt:
         timer += 0.001f;
         t1 = timer;
-        transform.position = Vector2.Lerp(start1.position, middle1.position, curve1.Evaluate(t1));
-        if (timer >= 1)
+        order = 1;
+
+        if (order == 1)
         {
-            timer = 0;
-            transform.position = Vector2.Lerp(middle1.position, end1.position, curve1.Evaluate(t1));
-            Debug.Log(t1);
+            transform.position = Vector2.Lerp(start1.position, middle1.position, curve1.Evaluate(t1));
+            if (t1 >= 1)
+            {
+                timer = 0;
+                order = 2;
+            }
+            
         }
+        if (order == 2)
+        { 
+            transform.position = Vector2.Lerp(middle1.position, end1.position, curve1.Evaluate(t1));
+            if (t1 >= 1)
+            {
+                timer = 0;
+                order = 3;
+            }
+        }
+        if (order == 3) 
+        { 
+            transform.position = Vector2.Lerp(end1.position, start1.position, curve1.Evaluate(t1));
+            if (t1 >= 1)
+            {
+                timer = 0;
+                order = 1;
+            }
+        }
+    
         //transform.position = Vector2.Lerp(start1.position, end1.position,curve1.Evaluate(t1));
         
     }
