@@ -7,6 +7,7 @@ public class LerpDemo1 : MonoBehaviour
     [Range (0,1)]
     public float t1;
     public Transform start1;
+    public Transform middle1;
     public Transform end1;
     public float timer;
 
@@ -26,10 +27,14 @@ public class LerpDemo1 : MonoBehaviour
         //Alt:
         timer += 0.001f;
         t1 = timer;
+        transform.position = Vector2.Lerp(start1.position, middle1.position, curve1.Evaluate(t1));
         if (timer >= 1)
         {
             timer = 0;
+            transform.position = Vector2.Lerp(middle1.position, end1.position, curve1.Evaluate(t1));
+            Debug.Log(t1);
         }
-        transform.position = Vector2.Lerp(start1.position, end1.position,curve1.Evaluate(t1));
+        //transform.position = Vector2.Lerp(start1.position, end1.position,curve1.Evaluate(t1));
+        
     }
 }

@@ -221,6 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   t1: 0
   start1: {fileID: 662296150}
+  middle1: {fileID: 1823141715}
   end1: {fileID: 713966056}
   timer: 0
   curve1:
