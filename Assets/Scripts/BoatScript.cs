@@ -18,7 +18,7 @@ public class BoatScript : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0; // Keeps the value of the boat at the same level
                         // Probably unncessary but I used it when I was debugging with exclusively with Vector3
-        mousePos.y = -2.6f; // Keeps the value of the boat at the same level
+        mousePos.y = -1.6f; // Keeps the value of the boat at the same level
 
         transform.position = Vector2.MoveTowards(transform.position, mousePos, speed * Time.deltaTime);  //So the boat moves towards mouse position but only the x value
         //I used about 3 different ways to try and write this code based on pseudocode provided but they didn't work the way I wanted to so I switched to move towards with a locked y value

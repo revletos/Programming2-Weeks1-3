@@ -8,6 +8,7 @@ public class LerpDemo : MonoBehaviour
     public float t;
     public Transform start;
     public Transform end;
+    public bool wave= false;
 
     public AnimationCurve curve;
     // Start is called before the first frame update
@@ -23,6 +24,6 @@ public class LerpDemo : MonoBehaviour
         //transform.position = pos;
 
         //Alt:
-        transform.position = Vector2.Lerp(start.position, end.position,curve.Evaluate(t));
+       transform.position = Vector2.Lerp(start.position, end.position,curve.Evaluate(t));
     }
 }
