@@ -21,12 +21,7 @@ public class BoatScript : MonoBehaviour
         mousePos.y = -2.6f; // Keeps the value of the boat at the same level
 
         transform.position = Vector2.MoveTowards(transform.position, mousePos, speed * Time.deltaTime);  //So the boat moves towards mouse position but only the x value
+        //I used about 3 different ways to try and write this code based on pseudocode provided but they didn't work the way I wanted to so I switched to move towards with a locked y value
 
-
-        //Vector2 pos = transform.position;
-        pos = transform.position.x; 
-        //pos.x += mousePos.x;
-        //pos.y = -2.6f;
-        //Debug.Log(pos.x.ToString());
     }
 }
