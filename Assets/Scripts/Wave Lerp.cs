@@ -21,7 +21,6 @@ public class WaveLerp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(t.ToString()); 
         if (/*(t <= 1) && */(wave == false))
         {
             t += Time.deltaTime;
