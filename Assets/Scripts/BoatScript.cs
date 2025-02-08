@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class BoatScript : MonoBehaviour
 {
-    public float speed = 1f;
-    float pos;
+    public float speed = 1f; // Can be set in inspector to adjust values
     // Start is called before the first frame update
     void Start()
     {
