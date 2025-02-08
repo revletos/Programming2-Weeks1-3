@@ -14,7 +14,7 @@ public class BoatScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition); //Checks mouse position in screen space and converts it to world space
         mousePos.z = 0; // Keeps the value of the boat at the same level
                         // Probably unncessary but I used it when I was debugging with exclusively with Vector3
         mousePos.y = -1.6f; // Keeps the value of the boat at the same level
